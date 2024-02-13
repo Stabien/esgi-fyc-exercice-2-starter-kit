@@ -1,47 +1,28 @@
-# Svelte + Vite
+# Cas pratique 2
 
-This template should help get you started developing with Svelte in Vite.
+Bienvenue sur le starter kit du deuxième cas pratique !
 
-## Recommended IDE Setup
+## Lancer le projet
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Pour lancer le projet vous avez deux choix : utiliser Docker ou bien le lancer directement sur votre machine avec un gestionnaire package (npm, yarn, pnpm...) et Vite.
 
-## Need an official Svelte framework?
+### Lancement du projet avec Docker
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+La première étape va être d'installer Docker, vous retrouverez les étapes d'installation sur ce lien : https://docs.docker.com/engine/install/
 
-## Technical considerations
+Ensuite vous devrez installer Docker Compose, à nouveau vous retrouverez les étapes à suivre sur ce lien : https://docs.docker.com/compose/install/
 
-**Why use this over SvelteKit?**
+Enfin une fois l'installation terminée, allez dans un terminal, placez-vous à la racine du projet et tapez la commande suivant `docker compose up -d`.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+### Lancement du projet sans Docker
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+Vérifiez votre version de Node.js (Elle doit être idéalement située en la version 16 et 20).
+Si vous souhaitez changer de version de Node.js rapidement, vous pouvez utiliser le service nvm, le lien suivant vous indique comment l'installer : https://github.com/nvm-sh/nvm
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+Une fois installée, faites la commande `nvm install <version_de_nodejs>`, puis une fois la version installée faites un `nvm use <version_de_nodejs>`.
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+Enfin, placez-vous à la racine du projet et faites un `npm run dev` / `yarn dev` / `pnpm run dev` la commande à choisir dépend de votre gestionnaire de package.
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+## Accéder à l'application
 
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+Votre projet est maintenant lancé ! Pour y accéder, rendez-vous sur l'url suivante : http://localhost:5173
